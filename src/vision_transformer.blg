@@ -1,68 +1,67 @@
-This is BibTeX, Version 0.99d
+This is BibTeX, Version 0.99d (TeX Live 2024)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: vision_transformer.aux
-Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: biblatex.bst
-Reallocating 'name_of_file' (item size: 1) to 23 items.
-Reallocating 'name_of_file' (item size: 1) to 19 items.
-Reallocating 'glb_str_end' (item size: 4) to 20 items.
-Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
-Reallocating 'global_strs' (item size: 1) to 4000000 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'wiz_functions' (item size: 4) to 6000 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: vision_transformer-blx.bib
 Database file #2: vision-transformer.bib
+Warning--I didn't find a database entry for "ruan2022visiontransformersstateart"
 Biblatex version: 3.20
-Reallocating 'wiz_functions' (item size: 4) to 9000 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 12 entries,
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 13 entries,
             6402 wiz_defined-function locations,
-            1284 strings with 15935 characters,
-and the built_in function-call counts, 162774 in all, are:
-= -- 14773
-> -- 1645
-< -- 440
-+ -- 5779
-- -- 672
-* -- 11563
-:= -- 20964
+            1291 strings with 16170 characters,
+and the built_in function-call counts, 180222 in all, are:
+= -- 16410
+> -- 1779
+< -- 464
++ -- 6439
+- -- 735
+* -- 12815
+:= -- 23324
 add.period$ -- 0
-call.type$ -- 12
-change.case$ -- 242
+call.type$ -- 13
+change.case$ -- 251
 chr.to.int$ -- 55
-cite$ -- 22
-duplicate$ -- 17724
-empty$ -- 12894
-format.name$ -- 1175
-if$ -- 31229
+cite$ -- 24
+duplicate$ -- 19679
+empty$ -- 14255
+format.name$ -- 1299
+if$ -- 34488
 int.to.chr$ -- 0
-int.to.str$ -- 30
+int.to.str$ -- 32
 missing$ -- 0
-newline$ -- 679
-num.names$ -- 607
-pop$ -- 4822
+newline$ -- 748
+num.names$ -- 648
+pop$ -- 5297
 preamble$ -- 1
-purify$ -- 377
+purify$ -- 402
 quote$ -- 0
-skip$ -- 2450
+skip$ -- 2628
 stack$ -- 0
-substring$ -- 28010
-swap$ -- 2463
-text.length$ -- 377
-text.prefix$ -- 11
+substring$ -- 31161
+swap$ -- 2689
+text.length$ -- 408
+text.prefix$ -- 12
 top$ -- 1
-type$ -- 396
+type$ -- 430
 warning$ -- 0
-while$ -- 2693
+while$ -- 2999
 width$ -- 0
-write$ -- 668
+write$ -- 736
+(There was 1 warning)
