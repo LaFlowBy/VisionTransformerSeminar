@@ -146,8 +146,7 @@
     \verb{eprint}
     \verb 2010.11929
     \endverb
-    \field{title}{An Image is Worth 16x16 Words: Transformers for Image
-  Recognition at Scale}
+    \field{title}{An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale}
     \verb{url}
     \verb https://arxiv.org/abs/2010.11929
     \endverb
@@ -188,27 +187,7 @@
     \field{sortinit}{F}
     \field{sortinithash}{F}
     \field{abstract}{%
-    Recurrent neural networks are effective models to process sequences.
-  However, they are unable to learn long-term dependencies because of their
-  inherent sequential nature. As a solution, Vaswani et al. introduced the
-  Transformer, a model solely based on the attention mechanism that is able to
-  relate any two positions of the input sequence, hence modelling arbitrary
-  long dependencies. The Transformer has improved the state-of-the-art across
-  numerous sequence modelling tasks. However, its effectiveness comes at the
-  expense of a quadratic computational and memory complexity with respect to
-  the sequence length, hindering its adoption. Fortunately, the deep learning
-  community has always been interested in improving the models’ efficiency,
-  leading to a plethora of solutions such as parameter sharing, pruning,
-  mixed-precision, and knowledge distillation. Recently, researchers have
-  directly addressed the Transformer’s limitation by designing
-  lower-complexity alternatives such as the Longformer, Reformer, Linformer,
-  and Performer. However, due to the wide range of solutions, it has become
-  challenging for researchers and practitioners to determine which methods to
-  apply in practice to meet the desired tradeoff between capacity, computation,
-  and memory. This survey addresses this issue by investigating popular
-  approaches to make Transformers faster and lighter and by providing a
-  comprehensive explanation of the methods’ strengths, limitations, and
-  underlying assumptions.%
+    Recurrent neural networks are effective models to process sequences. However, they are unable to learn long-term dependencies because of their inherent sequential nature. As a solution, Vaswani et al. introduced the Transformer, a model solely based on the attention mechanism that is able to relate any two positions of the input sequence, hence modelling arbitrary long dependencies. The Transformer has improved the state-of-the-art across numerous sequence modelling tasks. However, its effectiveness comes at the expense of a quadratic computational and memory complexity with respect to the sequence length, hindering its adoption. Fortunately, the deep learning community has always been interested in improving the models’ efficiency, leading to a plethora of solutions such as parameter sharing, pruning, mixed-precision, and knowledge distillation. Recently, researchers have directly addressed the Transformer’s limitation by designing lower-complexity alternatives such as the Longformer, Reformer, Linformer, and Performer. However, due to the wide range of solutions, it has become challenging for researchers and practitioners to determine which methods to apply in practice to meet the desired tradeoff between capacity, computation, and memory. This survey addresses this issue by investigating popular approaches to make Transformers faster and lighter and by providing a comprehensive explanation of the methods’ strengths, limitations, and underlying assumptions.%
     }
     \verb{doi}
     \verb 10.1145/3586074
@@ -270,8 +249,7 @@
     \list{publisher}{1}{%
       {Association for Computing Machinery}%
     }
-    \keyw{Self-attention, transformers, bidirectional encoders, deep neural
-  networks, convolutional networks, self-supervision, literature survey}
+    \keyw{Self-attention, transformers, bidirectional encoders, deep neural networks, convolutional networks, self-supervision, literature survey}
     \strng{namehash}{KS+1}
     \strng{fullhash}{KSNMHMZSWKFSSM1}
     \field{labelnamesource}{author}
@@ -279,35 +257,7 @@
     \field{sortinit}{K}
     \field{sortinithash}{K}
     \field{abstract}{%
-    Astounding results from Transformer models on natural language tasks have
-  intrigued the vision community to study their application to computer vision
-  problems. Among their salient benefits, Transformers enable modeling long
-  dependencies between input sequence elements and support parallel processing
-  of sequence as compared to recurrent networks, e.g., Long short-term memory.
-  Different from convolutional networks, Transformers require minimal inductive
-  biases for their design and are naturally suited as set-functions.
-  Furthermore, the straightforward design of Transformers allows processing
-  multiple modalities (e.g., images, videos, text, and speech) using similar
-  processing blocks and demonstrates excellent scalability to very large
-  capacity networks and huge datasets. These strengths have led to exciting
-  progress on a number of vision tasks using Transformer networks. This survey
-  aims to provide a comprehensive overview of the Transformer models in the
-  computer vision discipline. We start with an introduction to fundamental
-  concepts behind the success of Transformers, i.e., self-attention,
-  large-scale pre-training, and bidirectional feature encoding. We then cover
-  extensive applications of transformers in vision including popular
-  recognition tasks (e.g., image classification, object detection, action
-  recognition, and segmentation), generative modeling, multi-modal tasks (e.g.,
-  visual-question answering, visual reasoning, and visual grounding), video
-  processing (e.g., activity recognition, video forecasting), low-level vision
-  (e.g., image super-resolution, image enhancement, and colorization), and
-  three-dimensional analysis (e.g., point cloud classification and
-  segmentation). We compare the respective advantages and limitations of
-  popular techniques both in terms of architectural design and their
-  experimental value. Finally, we provide an analysis on open research
-  directions and possible future works. We hope this effort will ignite further
-  interest in the community to solve current challenges toward the application
-  of transformer models in computer vision.%
+    Astounding results from Transformer models on natural language tasks have intrigued the vision community to study their application to computer vision problems. Among their salient benefits, Transformers enable modeling long dependencies between input sequence elements and support parallel processing of sequence as compared to recurrent networks, e.g., Long short-term memory. Different from convolutional networks, Transformers require minimal inductive biases for their design and are naturally suited as set-functions. Furthermore, the straightforward design of Transformers allows processing multiple modalities (e.g., images, videos, text, and speech) using similar processing blocks and demonstrates excellent scalability to very large capacity networks and huge datasets. These strengths have led to exciting progress on a number of vision tasks using Transformer networks. This survey aims to provide a comprehensive overview of the Transformer models in the computer vision discipline. We start with an introduction to fundamental concepts behind the success of Transformers, i.e., self-attention, large-scale pre-training, and bidirectional feature encoding. We then cover extensive applications of transformers in vision including popular recognition tasks (e.g., image classification, object detection, action recognition, and segmentation), generative modeling, multi-modal tasks (e.g., visual-question answering, visual reasoning, and visual grounding), video processing (e.g., activity recognition, video forecasting), low-level vision (e.g., image super-resolution, image enhancement, and colorization), and three-dimensional analysis (e.g., point cloud classification and segmentation). We compare the respective advantages and limitations of popular techniques both in terms of architectural design and their experimental value. Finally, we provide an analysis on open research directions and possible future works. We hope this effort will ignite further interest in the community to solve current challenges toward the application of transformer models in computer vision.%
     }
     \verb{doi}
     \verb 10.1145/3505244
@@ -413,8 +363,7 @@
     \verb{eprint}
     \verb 2207.03041
     \endverb
-    \field{title}{Vision Transformers: State of the Art and Research
-  Challenges}
+    \field{title}{Vision Transformers: State of the Art and Research Challenges}
     \verb{url}
     \verb https://arxiv.org/abs/2207.03041
     \endverb
@@ -465,8 +414,7 @@
     \verb{eprint}
     \verb 2106.11297
     \endverb
-    \field{title}{TokenLearner: What Can 8 Learned Tokens Do for Images and
-  Videos?}
+    \field{title}{TokenLearner: What Can 8 Learned Tokens Do for Images and Videos?}
     \verb{url}
     \verb https://arxiv.org/abs/2106.11297
     \endverb
@@ -538,12 +486,7 @@
     \field{sortinit}{T}
     \field{sortinithash}{T}
     \field{abstract}{%
-    A Vision Transformer (ViT) is a simple neural architecture amenable to
-  serve several computer vision tasks. It has limited built-in architectural
-  priors, in contrast to more recent architectures that incorporate priors
-  either about the input data or of specific tasks. Recent works show that ViTs
-  benefit from self-supervised pre-training, in particular BerT-like
-  pre-training like BeiT.%
+    A Vision Transformer (ViT) is a simple neural architecture amenable to serve several computer vision tasks. It has limited built-in architectural priors, in contrast to more recent architectures that incorporate priors either about the input data or of specific tasks. Recent works show that ViTs benefit from self-supervised pre-training, in particular BerT-like pre-training like BeiT.%
     }
     \field{booktitle}{Computer Vision -- ECCV 2022}
     \field{isbn}{978-3-031-20053-3}
@@ -672,8 +615,7 @@
     \verb{eprint}
     \verb 2410.14072
     \endverb
-    \field{title}{Efficient Vision-Language Models by Summarizing Visual Tokens
-  into Compact Registers}
+    \field{title}{Efficient Vision-Language Models by Summarizing Visual Tokens into Compact Registers}
     \verb{url}
     \verb https://arxiv.org/abs/2410.14072
     \endverb
@@ -727,8 +669,7 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{Y}
     \field{sortinithash}{Y}
-    \field{booktitle}{Proceedings of the IEEE/CVF Conference on Computer Vision
-  and Pattern Recognition (CVPR)}
+    \field{booktitle}{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}
     \field{pages}{10809\bibrangedash 10818}
     \field{title}{A-ViT: Adaptive Tokens for Efficient Vision Transformer}
     \field{year}{2022}
