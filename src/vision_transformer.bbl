@@ -62,7 +62,7 @@
     \field{year}{2024}
   \endentry
 
-  \entry{dosovitskiy2021imageworth16x16words}{misc}{}{}
+  \entry{visiontransformers2021}{misc}{}{}
     \name{author}{12}{}{%
       {{hash=DA}{%
          family={Dosovitskiy},
@@ -333,7 +333,7 @@
     \field{year}{2024}
   \endentry
 
-  \entry{ruan2022visiontransformersstateart}{misc}{}{}
+  \entry{vit-state-challenges}{misc}{}{}
     \name{author}{3}{}{%
       {{hash=RBK}{%
          family={Ruan},
@@ -496,6 +496,75 @@
       {Cham}%
     }
     \field{year}{2022}
+  \endentry
+
+  \entry{transformer2017}{misc}{}{}
+    \name{author}{8}{}{%
+      {{hash=VA}{%
+         family={Vaswani},
+         familyi={V\bibinitperiod},
+         given={Ashish},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SN}{%
+         family={Shazeer},
+         familyi={S\bibinitperiod},
+         given={Noam},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=PN}{%
+         family={Parmar},
+         familyi={P\bibinitperiod},
+         given={Niki},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=UJ}{%
+         family={Uszkoreit},
+         familyi={U\bibinitperiod},
+         given={Jakob},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=JL}{%
+         family={Jones},
+         familyi={J\bibinitperiod},
+         given={Llion},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=GAN}{%
+         family={Gomez},
+         familyi={G\bibinitperiod},
+         given={Aidan\bibnamedelima N.},
+         giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=KL}{%
+         family={Kaiser},
+         familyi={K\bibinitperiod},
+         given={Lukasz},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=PI}{%
+         family={Polosukhin},
+         familyi={P\bibinitperiod},
+         given={Illia},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VA+1}
+    \strng{fullhash}{VASNPNUJJLGANKLPI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \verb{eprint}
+    \verb 1706.03762
+    \endverb
+    \field{title}{Attention Is All You Need}
+    \verb{url}
+    \verb https://arxiv.org/abs/1706.03762
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.CL}
+    \field{year}{2023}
   \endentry
 
   \entry{wang2024mambarvisionmambaneeds}{misc}{}{}
