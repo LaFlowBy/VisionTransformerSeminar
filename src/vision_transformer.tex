@@ -37,12 +37,12 @@
 
   \section{Vision Transformers}
 
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/vit-architecture.png}
-    \caption{Overview of a \ac{vit} architecture. \cite{visiontransformers2021}}
-    \label{fig:vit-architecture}
-  \end{figure}
+  % \begin{figure}
+  %   \centering
+  %   \includegraphics[width=0.5\textwidth]{figures/vit-architecture.png}
+  %   \caption{Overview of a \ac{vit} architecture. \cite{visiontransformers2021}}
+  %   \label{fig:vit-architecture}
+  % \end{figure}
 
   The Transformer architecture is a neural network model architecture, created primarily for sequence-to-sequence tasks in \ac{nlp}. 
   \begin{quote}
@@ -69,20 +69,37 @@
   Like Transformers, \acp{vit} are also very parallelizable, which makes them very efficient. But \cite{visiontransformers2021} found out that without large-scale pre-training, \acp{vit} often underperform. So \acp{vit} requires sidnificant computational resources. But when pre-trained on large datasets, \acp{vit} outperforms \acp{cnn} on image classification tasks. The architecture performs well for transfer learning, where the pre-trained model can be fine-tuned already with limited labeled data \cite{visiontransformers2021}.  \cite{visiontransformers2021} stated that further scaling of \acp{vit} would likely lead to improved performance. Also self-supervised pre-training, where no labeled data is needed, can be improved. They found out that with mimicking the masked language modeling task used in BERT, the model performs still better than \acp{cnn} but a bit worse that with supervised pre-training of a \ac{vit}. By now different architectures and training-tricks of \acp{vit} have been proposed to further improve \acp{vit} including self-supervised learning. The architectur also got adapted for image recognition, object detection, image segmentation, pose estimation, and 3D reconstruction tasks. \cite{vit-state-challenges}
 
   The classical \ac{vit} architecture has been adopted and improved by many others. One approach is to include \ac{cnn} structures, which bring locality through the convolution kernels, into \acp{vit} to improve the data efficiency. DeiT \cite{deit} for example uses a \ac{cnn} as a teacher to train a \ac{vit}. It utilizes knowledge distillation of the \ac{cnn} to add the inductive bias to a vision transformer. It allows to train a \ac{vit} without the need of large-scale pre-training the model. \cite{vit-state-challenges} Another approach is to diversify the features of \acp{vit}. DeepVit \cite{deepvit} found out that the attention collapses in deeper layers, wich leads to lower performance. By adding a learnable transformation matrix after the attention layer, the model is stimulated to generate new attention maps also in the deeper layer, increasing the performance. \cite{vit-state-challenges} Also the heavy computation costs are reseached. Many also try to improve the self-supervised learning, that the pre-training with the need of large datasets can be simplified. One approach is DINO. \cite{dino} It uses a teacher-student archtecture, where the student network learns to match the avereaged outputs of the teacher. \cite{vit-state-challenges} The following summerized paper, identifies and addresses artifacts in attention maps of supervised and self-supervised \ac{vit} networks.
+  
+  In the following chapter the concepts of different \ac{vit} architectures are introduced. These models are used in the paper \cite{registers} that will be summerized afterwards.
 
+  \subsection{DINO and DINOv2}
+  \cite{dino} \cite{dinov2}
+  DINO is a self-supervised learning framework using a student-teacher network. The teacher is dynamically built from past iterations of the student network. It uses self-destillation with no labels. For each image, two high-resolution global views and several low-resolution local views are generated. The teacher only processes the global views using an Exponential Moving Average of the student's weights. The student processes global and local views and the cross-entropy loss is used to calculate the similarity between the student and teacher. It also uses mechanisms to avoid trivial solutions. \cite{dino} It is shown that the the attention maps contain explicit information about the semantic layout of an image. \cite{registers}
+  DINOv2 further improves the idea of DINO, enhancing scalable, efficiency and genalization of self-supervised learning in computer vision. Following techniques are used to improve the model:
+  \begin{itemize}
+    \item  using an automatic pipeline to build a dedicated, diverse, and curated image dataset
+    \item  using bigger \ac{vit} model with one bilion parameters
+    \item distilling the model into a series of smaller models \cite{dinov2}
+  \end{itemize}
+  The improvments enable dense prediciton tasks. On the other hand, artifacts in the attention maps are observed. \cite{registers}
+
+  \subsection{LOST}
+  \cite{lost}
+  \subsection{Deit-III and OpenCLIP}
   \cite{deit3} \cite{open-clip}
+
 
   \section{Vision Transformers need registers: A summary}
 
   In this chapter we summerize the paper \cite{registers}. The paper discoverd artifacts and proposes to use additional register tokens for \acp{vit} to remove these artifacts.
 
   \subsection{Artifacts in Vision Transformers}
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/vits-artifacts.png}
-    \caption{Illustration of artifacts observed in the attention maps of modern vision transformers. \cite{registers}}
-    \label{fig:artifacts-observations}
-  \end{figure}
+  % \begin{figure}
+  %   \centering
+  %   \includegraphics[width=0.5\textwidth]{figures/vits-artifacts.png}
+  %   \caption{Illustration of artifacts observed in the attention maps of modern vision transformers. \cite{registers}}
+  %   \label{fig:artifacts-observations}
+  % \end{figure}
 
 
   After introducing to \acp{vit} like we did in this paper, the models they found the artifacts are introduced. The DINO algorithm is a self-supervised learning method, that uses two \acp{vit}. A student network is predicting the output of a teacher network, to learn rich representaions of visual data without the need of manual annotations. \cite{dino} DINO is shown to produce models, that contain semantically consistent information in the last attention layer. Object discovery algorihtms like LOST \cite{lost}, built on top of DINO, are using these attention maps, that often contains semantically interpretable information, used to detect objects without supervision. DINOv2 \cite{dinov2} is a improved followup focusing on dense predition tasks, which are tasks, where detailed outputs are required to provide fine-grained localized informations, like semantic segementation or depth estimation. Despite good performance on these dense tasks, the authors observed that DINOv2 is incompatible with LOST \cite{registers}. The different behaviour of DINO and DINOv2 can be observed in the artifacts in the last attention maps. In figure \ref{fig:artifacts-observations} you can see the different models and their artifacts on the last attention layer.
@@ -101,18 +118,18 @@
     \item artifacts only appear in the three largest model versions
   \end{itemize}
 
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.3\textwidth]{figures/artifact-norm.png}
-    \caption{Comparison of local feature norms for DINO ViT-B/16 and DINOv2 \cite{registers}}
-    \label{fig:artifacts-norm}
-  \end{figure}
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/artifact-layers.png}
-    \caption{Illustration of several properties of outlier tokens in the 40-layer DINOv2 ViT-g model \cite{registers}}
-    \label{fig:artifacts-layer}
-  \end{figure}
+  % \begin{figure}
+  %   \centering
+  %   \includegraphics[width=0.3\textwidth]{figures/artifact-norm.png}
+  %   \caption{Comparison of local feature norms for DINO ViT-B/16 and DINOv2 \cite{registers}}
+  %   \label{fig:artifacts-norm}
+  % \end{figure}
+  % \begin{figure}
+  %   \centering
+  %   \includegraphics[width=0.5\textwidth]{figures/artifact-layers.png}
+  %   \caption{Illustration of several properties of outlier tokens in the 40-layer DINOv2 ViT-g model \cite{registers}}
+  %   \label{fig:artifacts-layer}
+  % \end{figure}
 
   Another discovery is that the high-norm tokens appear where patch information is redundant. The authors tested the cosine similarity between high-norm tokens and their four neighbors, directly after the image is emebdded. They observed, that the high norm patches appear where their cosine similarity to the neighbors is high. Compared to the observations, that shows that artifacts appear mostly in the background of images, high-norm pathes seem to have redundant information, that the model can ignore, to achive similar scores at the output.
 
@@ -129,36 +146,50 @@
 
   To address the behaviour, the use of registers is proposed. Since the high-norm patches are overtaking local patch information, even they are mostly not important, it possibly decreases the performance on dense prediction tasks. The called registers are additional tokens after the patch embeddings of the images with a learnable value. They work similar to the [class] token, used for classificaion tasks. They are used durning training and inference and they are discarded afterwards. In figure \ref{fig:register-architecture} you can see the register tokens additionally used after the embedding of the image. A complexity analysis show that adding registers increase the FLOPs by up to 6\% for 16 registers. With four registers, that are more commonly used, the increase is below 2\%.
 
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/register-architecture.png}
-    \caption{Illustration of the proposed remediation and resulting model \cite{registers}}
-    \label{fig:register-architecture}
-  \end{figure}
+  % \begin{figure}
+  %   \centering
+  %   \includegraphics[width=0.5\textwidth]{figures/register-architecture.png}
+  %   \caption{Illustration of the proposed remediation and resulting model \cite{registers}}
+  %   \label{fig:register-architecture}
+  % \end{figure}
+
+  The idea of adding additional tokens as memory to a transformer model is from \cite{memorytransformer}. The study adds trainable memory to transformer for \ac{nlp} tasks. Many studies before have tried memory augementation in neural networks, to imporve the performance of the models. For Transformers the paper use general purpose [mem] tokens that can be used as placeholders by the model, to store global information or copy also local representaions. They are proposing three different architectures using memory tokens. The first one is just concatenate the tokens to the input, and process them together in one encoder by layers with the same parameters. This is the approach that is adapted for the register tokens of the \ac{vit}. The second architecture of \cite{memorytransformer} is to use a sepereate memory control layer and the third architecture further restricting the processing by first updating the attention of the memory and then update the attention maps of the sequence. The evaluation showed that the basic memory architectur outperforms baseline transformers. The other architectures had not so clear results, sometime increasing, sometimes decreasing performance of baseline transformers.
 
   \subsection{Evaluation of the proposed architecture}
 
   In the last part of the paper they validate their architecture by training \acp{vit} with register tokens and compare them  quantitativly and qualitativly to the models without token registers. They are evaluating for DEIT-III, OpenCLIP and DINOv2 architectures, therfore including label-supervised, text-supervised and self-supervised learning approaches. In figure \ref{fig:register-result} you can see three example images including attention maps with and without the use of register tokens. Qualitativly, for all three models, the artifacts in the attention maps are gone. They mesaured quantitativly the effect by calculating the norm of the attention maps at the output of the model. In figure \ref{fig:register-norm-result} you can see the distribution of the output norms for the three models. For all three models, training it with register tokens removes high-norm tokens, that were present without the token registers. Instead the attention maps of the register tokens have  higher norm than the patch and the class tokens. The register tokens are adapting the behaviour of the outlier patches of the model without registers. Visualizations are also showing that the attention maps of the register tokens look similar to the attention maps of the class tokens, all showing a larger support area. The attention maps of the patch tokens are more localized. Since the class token carries global informations, it suggests that the register tokens are also used to store global information. 
-  Comparing the performance of the models with and without register tokens, linear probing on ImageNet classification, ADE20k Segmentation, and NYUd monocular depth estimation datasets was used. The results show no lose in performance, when additoinally using register tokens. Also for zero-shot classification on ImageNet with OpenCLIP, the performance is not affected by using register tokens. They also found out that one register is enough to remove the high-norm tokens in the attention maps. For DINOv2 and DeiT-III, adding register tokens significantly improves the discovery performance and for OpenCLIP, the performance is slighty worse with registers. They concluded that their proposal improves the performance in dense prediction and object discovery.
+  Comparing the performance of the models with and without register tokens, linear probing on ImageNet classification, ADE20k Segmentation, and NYUd monocular depth estimation datasets was used. The results show no lose in performance, when additoinally using register tokens. Also for zero-shot classification on ImageNet with OpenCLIP, the performance is not affected by using register tokens. They also found out that one register is enough to remove the high-norm tokens in the attention maps. For DINOv2 and DeiT-III, adding register tokens significantly improves the discovery performance and for OpenCLIP, the performance is slighty worse with registers. The authors concluded that their proposal isolates the behaviour of the model using memory for global information. It was shown that \acp{vit} naturally using patches to store global information. With creating registers exactly for that purpose, collateral side-effects, like bad performance of LOST with DINOv2 can be avoided.
 
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/register-result.png}
-    \caption{Three examples of attention maps with and without register tokens \cite{registers}}
-    \label{fig:register-result}
-  \end{figure}
+  % \begin{figure}
+  %   \centering
+  %   \includegraphics[width=0.5\textwidth]{figures/register-result.png}
+  %   \caption{Three examples of attention maps with and without register tokens \cite{registers}}
+  %   \label{fig:register-result}
+  % \end{figure}
 
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/register-norm-result.png}
-    \caption{: Effect of register tokens on the distribution of output norms \cite{registers}}
-    \label{fig:register-norm-result}
-  \end{figure}
+  % \begin{figure}
+  %   \centering
+  %   \includegraphics[width=0.5\textwidth]{figures/register-norm-result.png}
+  %   \caption{: Effect of register tokens on the distribution of output norms \cite{registers}}
+  %   \label{fig:register-norm-result}
+  % \end{figure}
 
 
   \section{Comparison to other papers with performance improvements of \ac{vit}s}
 
   \subsection{\cite{mamba-needs-registers} applies the idea of registers to a \ac{ssm}}
+  The authors applied the use of register tokens to the Vision Mamba model, after also discovering outlier tokens in the background, achieving higher performance than without registers. 
+  
+  Vision Mamba \cite{vision-mamba} is a model architecture using bidirectional \acfp{ssm}. The VIM Blocks, that are inspired by \ac{ssm} can maintain long-range dependencies in the model, similar like the attention mechanism for \acp{vit}. Otherwise, it uses a feedforeward network, positonal encoding and normalization. Images are also decomposed into patches and then used as input to the Vision Mamba encoder. The big advantage compared to the quadratic complexity of self-attention mechanism is that its computational complexity is only linear. Therefore the training process and the memory usage is way lower than using \acp{vit} and \acp{cnn}. The architectur outperforms \acp{vit} like DeiT \cite{deit} on some tasks, showing the potential of using \ac{ssm} in computer vision. \cite{vision-mamba} \cite{mamba-needs-registers}
+  
+  The authors found the same artifacts in the feature maps of Vision Mamba than \citeauthor{registers} found artifacts in the attention maps of various \acp{vit}. They even exists considerably more severe in the Vision Mamba, starting already in small models sizes. In figure \ref{fig:mamba-artifacts} you can see the artifacts, which are spread all over the image, but also mainly appearing in background regions of the images. The feature maps of the Vision Mamba, that are used for the analysis, are the $\ell_2$ distances between the global and local outputs. The artifacts appear to have a high normalization. Similar graphes like figure \ref{fig:artifacts-norm} are presented. It is also shown that the artifacts contain global information. Building upon the architecture from \cite{registers} using register tokens, they insert the tokens evenly between the token sequence of the image. Since the tokens are not agnostic to their position in the Vision Mamba, having the registers near the whole sequence of input tokens. Another difference is that they concatenate the register tokens at the end, to use them for the final prediction. Doing that, they observed significant improvements. They also observed that the different registers highlighting different objects or semantic elements within a picture. Since Vision Mamba architecture has no multi-head mechanism like the attention mechanism in \acp{vit}, it offers a lot of information that can be used for interpreting the result of the model. The proposed Mamba® architectur outperforms all prior Mamba variants for image classification and semantic segmentation. \cite{mamba-needs-registers}
+
+  % \begin{figure}
+  %   \centering
+  %   \includegraphics[width=0.5\textwidth]{figures/mamba-artifacts.png}
+  %   \caption{Feature maps of vanilla Vision Mamba \cite{vision-mamba} and Mamba® using registers \cite{mamba-needs-registers}}
+  %   \label{fig:mamba-artifacts}
+  % \end{figure}
 
   \subsection{\cite{sum-tokens-to-registers} uses a token learner to improve the performance of \ac{vit}s}
 
@@ -172,13 +203,12 @@
 
   \begin{acronym}
     \acro{vit}[ViT]{Vision Transformer}
-    \acroplural{vit}[ViTs]{\ac{vit}s}
     \acro{nlp}[NLP]{Natural Language Processing}
     \acro{cnn}[CNN]{Convolutional Neural Network}
     \acroplural{cnn}[CNNs]{\acp{cnn}}
     \acro{rnn}[RNN]{Recurrent Neural Network}
     \acro{mlp}[MLP]{Multi-Layer Perceptron}
-    \acro{ssm}[SSM]{n State Space Model}
+    \acro{ssm}[SSM]{State Space Model}
   \end{acronym}
 
 
