@@ -4,4 +4,4 @@
 
 - For a Seminar for the University of Marburg, Department of Mathematics and Computer Science
 
-- Result PDF is [here](src/bare_conf.pdf)
+- Result PDF is [here](src/vision_transformer.pdf)
